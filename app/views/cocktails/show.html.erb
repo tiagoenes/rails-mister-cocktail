@@ -1,0 +1,30 @@
+<div class="dose-banner" style="background-position: center;background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/600x300/?<%= @cocktail.name.gsub(" ", "%20") %>)">
+  <h1><%= @cocktail.name.capitalize()  %></h1>
+</div>
+
+<div class="container list-doses">
+
+  <div class="row justify-content-center">
+
+      <div class="col-12 col-md-4 doses-item">
+        <%= link_to new_cocktail_dose_path(@cocktail), :data => {:"toggle"=> "modal",:"target"=> "#staticBackdrop"}  do  %>
+        <div class="card-category" style="background-position: center;background-color: #bfbfbf;">
+          Add a dose
+        </div>
+        <% end %>
+      </div>
+    <%= render 'shared/modal-doses',cocktail: @cocktail, doses: @dose %>
+    <% @doses.each do |dose| %>
+    <div class="col-12 col-md-4 doses-item">
+      <div class="card-category" style="background-position: center;background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/600x300/?<%= dose.ingredient[:name].gsub(" ", "%20") %>)">
+        <%= "#{dose.description} - #{dose.ingredient[:name].capitalize() }" %>
+      </div>
+      <%= link_to dose_path(dose), method: :delete, data: { confirm: 'Are you sure?' },class: "destroy-dose" do %>
+      <i class="far fa-times-circle"></i>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
