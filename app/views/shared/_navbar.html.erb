@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
+<div class="navbar navbar-expand-md navbar-light navbar-lewagon fixed-top">
   <%= link_to home_path, class: "navbar-brand" do %>
   <div class= "containeer-logo">
       <%= image_tag "logo3.svg" , class: "img-logo"%>
@@ -8,7 +8,7 @@
   <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav mr-auto navbar-space-logo">
       <li class="nav-item active d-flex">
         <%= form_tag (search_cocktails_path) , class: "d-flex" do %>
         <%= text_field_tag :search,@query %>

@@ -11,10 +11,12 @@ require("@rails/activestorage").start()
 require("channels")
 
 import { initUpdateNavbarOnScroll } from '../components/navbar';
+import { clickMenu } from '../components/menu-button';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   initUpdateNavbarOnScroll();
+  clickMenu();
 });
 
 // Uncomment to copy all static images under ../images to the output folder and reference
