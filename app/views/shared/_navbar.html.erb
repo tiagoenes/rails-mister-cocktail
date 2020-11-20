@@ -9,13 +9,16 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto navbar-space-logo">
-      <li class="nav-item active d-flex">
+      <li class="empty">
+
+      </li>
+      <li class="nav-item nav-bar-center-search active d-flex">
         <%= form_tag (search_cocktails_path) , class: "d-flex" do %>
         <%= text_field_tag :search,@query %>
         <%= submit_tag 'Search', class: 'nav-link btn btn-outline my-2 my-sm-0' %>
         <% end %>
       </li>
-      <li class="nav-item">
+      <li class="nav-item nav-bar-center-search">
         <%= link_to "See All", cocktails_path, class: "nav-link btn btn-outline my-2 my-sm-0 ml-2" %>
       </li>
       <li class="nav-item dropdown">
