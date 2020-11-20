@@ -28,3 +28,9 @@
     transform: translate(-50%,0);
     z-index: 1;
 }
+.nav-link{
+  color:white!important;
+  &:hover{
+   color:#167ffb!important;
+  }
+}
