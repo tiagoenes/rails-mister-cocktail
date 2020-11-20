@@ -1,6 +1,6 @@
 <div class="container-fluid list-cocktails">
   <div class="row justify-content-center">
-    <div class="col-3 cocktail-item">
+    <div class="col-12 col-md-6 col-lg-4 cocktail-item">
       <%= link_to new_cocktail_path, :data => {:"toggle"=> "modal",:"target"=> "#staticBackdrop"} do%>
       <!-- <a href="cocktails/new" data-toggle="modal" data-target="#staticBackdrop"> -->
         <div class="card-category" style="background-position: center;background-color:#bfbfbf">
@@ -10,7 +10,7 @@
       <% end %>
     </div>
     <% @cocktails.each do |cocktail| %>
-    <div class="col-3 cocktail-item">
+    <div class="col-12 col-md-6 col-lg-4 cocktail-item">
       <%= link_to cocktail_path(cocktail) do %>
       <div class="card-category" style="background-position: center;background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :fill  %>)">
         <%= cocktail.name.capitalize()  %>
