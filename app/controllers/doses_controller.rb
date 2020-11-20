@@ -15,7 +15,8 @@ class DosesController < ApplicationController
     if @dose.save
       redirect_to cocktail_path(@cocktail)
     else
-      render :new
+      flash[:notice] = "This ingredient already exist"
+      redirect_to cocktail_path(@cocktail)
     end
   end
 
