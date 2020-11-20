@@ -1,18 +1,30 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
-  background-color: #eae4e47a;
-  border-bottom: 1px solid #d4d1d1;
+  background-color: #1f1f1f;
+  border-bottom: 1px solid #9a9898;
   transition: 0.5s background-color ease;
+
 }
 .navbar-lewagon-white {
-  background-color: white;
+  background-color: #1f1f1f;
 }
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 90px;
+  height: 90px;
 }
 
+.containeer-logo{
+  position: absolute;
+  left:50%;
+  top: 2px;
+}
+.img-logo{
+  position: absolute;
+    transform: translate(-50%,0);
+    z-index: 1;
+}

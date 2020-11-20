@@ -3,19 +3,20 @@
 </div>
 
 <div class="container list-doses">
-
+<%= render 'shared/modal-doses',cocktail: @cocktail, doses: @dose %>
   <div class="row justify-content-center">
-
-      <div class="col-12 col-md-4 doses-item">
+      <% val = @doses.count > 0 ? 4 : 12 %>
+      <div class="col-12 col-md-<%= val %> doses-item">
         <%= link_to new_cocktail_dose_path(@cocktail), :data => {:"toggle"=> "modal",:"target"=> "#staticBackdrop"}  do  %>
         <div class="card-category" style="background-position: center;background-color: #bfbfbf;">
-          Add a dose
+          <i class="fas fa-plus-circle icon-add"></i> Add a dose
         </div>
         <% end %>
       </div>
-    <%= render 'shared/modal-doses',cocktail: @cocktail, doses: @dose %>
+
+    <% num = @doses.count > 1 ? 4 : 8 %>
     <% @doses.each do |dose| %>
-    <div class="col-12 col-md-4 doses-item">
+    <div class="col-12 col-md-<%= num %> doses-item">
       <div class="card-category" style="background-position: center;background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/600x300/?<%= dose.ingredient[:name].gsub(" ", "%20") %>)">
         <%= "#{dose.description} - #{dose.ingredient[:name].capitalize() }" %>
       </div>
