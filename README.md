@@ -1,5 +1,8 @@
 # README
 
+Link to the page:https://amazingmistercocktail.herokuapp.com/
+The heroku app might take a few seconds to load
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
